@@ -1,0 +1,2 @@
+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
+git remote add origin https://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@github.com/Zolihhh/upirMeasuring.git
