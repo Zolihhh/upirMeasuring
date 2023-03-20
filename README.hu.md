@@ -85,3 +85,14 @@ except KeyboardInterrupt:
     print("Pinek lekapcsolva")
     GPIO.cleanup()
 ```
+
+```py
+try:
+    while True:
+        u = ina.voltage()
+        i = ina.current()
+        p = ina.power()
+        r = u/i
+        print(f"State: {state} U={u:.3f}V, I={i:.3f}mA, P={p:.3f}mW R ={r:.2f}kOhm")
+        time.sleep(0.3)
+```
