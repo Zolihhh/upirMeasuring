@@ -95,4 +95,24 @@ try:
         r = u/i
         print(f"State: {state} U={u:.3f}V, I={i:.3f}mA, P={p:.3f}mW R ={r:.2f}kOhm")
         time.sleep(0.3)
+        m = u
+        GPIO.output(pinRed, 0)
+        GPIO.output(pinGreen, 0)
+        GPIO.output(pinBlue, 0)
+        GPIO.output(pinWhite, 0)
+        if state == "U":
+            m = u
+            GPIO.output(pinRed, 1)
+        elif state == "I":
+            m = i
+            GPIO.output(pinGreen, 1)
+        elif state == "R":
+            m = r
+            GPIO.output(pinBlue, 1)
+        elif state == "P":
+            m = p
+            GPIO.output(pinWhite, 1)
+        iString = str(m)[:5].ljust(5,"0")
+        display.print(iString)
+        time.sleep(1)
 ```
